@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  keyword = 'test';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  search(event: MouseEvent) {
+    // console.log(event.altKey);
+    console.log(this.keyword);
   }
 
 }

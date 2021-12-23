@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cathay-ng-basic';
+  title = 'conduit !!';
+  subTitle = 'A place to share your <u>knowledge</u>.';
 }
