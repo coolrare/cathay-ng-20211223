@@ -66,6 +66,10 @@ export class ArticleService {
     return this.httpClient.get<ArticleResponse>('https://api.realworld.io/api/articles');
   }
 
+  getArticlesByKeyword(keyword: string) {
+    return this.httpClient.get<ArticleResponse>('https://api.realworld.io/api/articles');
+  }
+
 
   filterArticles(articles: Article[], keyword: string) {
     if(!keyword.trim()) {
