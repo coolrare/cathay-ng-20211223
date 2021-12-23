@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Output() keywordSearch = new EventEmitter();
+
   keyword = 'test';
   isHighlight = false;
   fontSize = 24;
@@ -16,6 +18,7 @@ export class HeaderComponent implements OnInit {
   }
 
   search(event: MouseEvent) {
+    this.keywordSearch.emit(this.keyword);
     this.isHighlight = !this.isHighlight;
     this.fontSize += 2;
     // console.log(event.altKey);
