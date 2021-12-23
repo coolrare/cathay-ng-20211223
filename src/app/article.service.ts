@@ -68,6 +68,9 @@ export class ArticleService {
 
 
   filterArticles(articles: Article[], keyword: string) {
+    if(!keyword.trim()) {
+      return articles;
+    }
     return articles.filter(item => item.title.indexOf(keyword) !== -1);
   }
 

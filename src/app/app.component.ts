@@ -17,6 +17,8 @@ export class AppComponent implements OnInit {
 
   originalList = this.list;
 
+  keyword = '';
+
   constructor(private articleService: ArticleService) {}
 
   ngOnInit(): void {
@@ -38,7 +40,7 @@ export class AppComponent implements OnInit {
 
   searchArticle(keyword: string) {
     // this.list = this.originalList.filter(item => item.title.indexOf(keyword) !== -1);
-
-    this.list = this.articleService.filterArticles(this.originalList, keyword);
+    // this.list = this.articleService.filterArticles(this.originalList, keyword);
+    this.keyword = keyword;
   }
 }
