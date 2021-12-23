@@ -42,5 +42,9 @@ export class AppComponent implements OnInit {
     // this.list = this.originalList.filter(item => item.title.indexOf(keyword) !== -1);
     // this.list = this.articleService.filterArticles(this.originalList, keyword);
     this.keyword = keyword;
+
+    // this.articleService.getArticlesByKeyword(keyword).subscribe(result => {
+    //   this.list = result.articles;
+    // });
   }
 }
