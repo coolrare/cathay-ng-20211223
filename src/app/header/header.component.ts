@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   keyword = 'test';
+  isHighlight = false;
+  fontSize = 24;
 
   constructor() { }
 
@@ -14,6 +16,8 @@ export class HeaderComponent implements OnInit {
   }
 
   search(event: MouseEvent) {
+    this.isHighlight = !this.isHighlight;
+    this.fontSize += 2;
     // console.log(event.altKey);
     console.log(this.keyword);
   }
