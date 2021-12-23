@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Article } from './article';
-
+import { Article, ArticleResponse } from './article';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -60,7 +60,12 @@ export class ArticleService {
     }
   ];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
+
+  getArticles() {
+    return this.httpClient.get<ArticleResponse>('https://api.realworld.io/api/articles');
+  }
+
 
   filterArticles(articles: Article[], keyword: string) {
     return articles.filter(item => item.title.indexOf(keyword) !== -1);
